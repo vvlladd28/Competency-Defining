@@ -1,0 +1,60 @@
+/* app css stylesheet */
+nav-bar {
+    display: block;
+}
+
+.navbar.navbar-light.navbar-static-top {
+    background-color: #e3f2fd;
+}
+
+.navbar-brand {
+    font-size: 16pt;
+}
+
+.navbar-nav>li {
+    font-size: 12pt;
+}
+
+.navbar-toggle{
+    border: 1px solid #337ab7;
+}
+
+.icon-bar {
+    background-color: #337ab7;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #F0F8FE;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #EAF6FE;
+}
+
+.home, .result {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #337ab7;
+    text-align: center;
+}
+
+.greating {
+    font-size: 20pt;
+}
+
+.text {
+    font-size: 16pt
+}
+
+.note {
+    font-size: 14pt
+}
+
+.answer label{
+   font-weight: normal;
+   font-style: italic;
+}
+
+@media (max-width: 767px) and (min-width: 500px) {
+    .username {width: 450px;}
+}

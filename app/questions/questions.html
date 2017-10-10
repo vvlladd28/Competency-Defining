@@ -1,0 +1,24 @@
+<div class="row">
+    <form class="col-xs-12 col-sm-12" name="form" ng-submit="addAnswer()" role="form">
+        <div class="form-group row">
+            <div class="col-xs-12 col-sm-7 username">
+                <label for="username">User name</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="username" required/><br />
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">user name is require</span>
+            </div>
+        </div>
+        <div class="row" ng-repeat="item in issues">
+            <div class="col-xs-12 col-sm-9 form-group">
+                <label>{{item.question}}</label><br />
+                <label for="{{ 'minAnswer' + $index }}">min</label>
+                <input id="{{ 'minAnswer' + $index }}" type="number" ng-model="answer[$index].min" required/><br />
+                <label for="{{ 'maxAnswer' + $index }}">max</label>
+                <input id="{{ 'maxAnswer' + $index }}" type="number" ng-model="answer[$index].max" required/><br />
+                <span ng-show="answer[$index].min > answer[$index].max" class="help-block">min<=max</span>
+            </div>
+        </div>
+        <div class="form-actions row">
+            <button type="submit" ng-disabled="form.$invalid || sizeObj(answer) < issues.length" class="btn btn-danger col-xs-offset-9 col-sm-offset-10">Submit</button>
+        </div>
+    </form>
+</div>

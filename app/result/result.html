@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="table-responsive col-xs-12 col-sm-12">
+        <table ng-if="answers.length>2" class="table table-hover table-striped">
+            <tr>
+                <th>Experts Name</th>
+                <th ng-repeat="question in answers[0].answer">{{$index+1}}</th>
+                <th>Competence</th>
+            </tr>
+            <tr ng-repeat="item in answers">
+                <td>{{item.name}}</td>
+                <td ng-repeat="an in item.answer">{{an}}</td>
+                <td>{{competenceFix[$index]}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="result" ng-if="answers.length<3">
+        <p class="text">Sorry, there are no available results. Too little amount of persons passed this test.</p>
+    </div>
+</div>

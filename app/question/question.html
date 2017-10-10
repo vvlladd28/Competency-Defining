@@ -1,0 +1,25 @@
+<div class="row">
+    <form class="col-xs-12 col-sm-12" name="form" ng-submit="addAnswer()" role="form">
+        <div class="form-group row">
+            <div class="col-xs-12 col-sm-7 username">
+                <label for="username">Введите имя пользователя:</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="username" required/><br />
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Это обязательное поле!</span>
+            </div>
+        </div>
+        <div class="row" ng-repeat="item in issues">
+            <div class="col-xs-12 col-sm-11 form-group">
+                <label>{{item.question}}</label>
+                <div class="answer">
+                    <input id="{{ 'YesAnswer' + $index }}" type="radio" ng-model="answer[$index]" value=1 />
+                    <label for="{{ 'YesAnswer' + $index }}">&nbsp;Да</label><br />
+                    <input id="{{ 'NoAnswer' + $index }}" type="radio" ng-model="answer[$index]" value=0 />
+                    <label for="{{ 'NoAnswer' + $index }}">&nbsp;Нет</label><br />
+                </div>
+            </div>
+        </div>
+        <div class="form-actions row">
+            <button type="submit" ng-disabled="form.$invalid || sizeObj(answer) < issues.length" class="btn btn-danger col-xs-offset-9 col-sm-offset-10">Submit</button>
+        </div>
+    </form>
+</div>
